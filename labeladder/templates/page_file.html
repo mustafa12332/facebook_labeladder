@@ -1,0 +1,25 @@
+<html>
+    <head></head>
+    <body>
+        <h3>Add Label Form</h3>
+        <form enctype="multipart/form-data" method="post">
+            {%csrf_token%}
+            {{ form}}
+            <button type="submit" >Submit</button>
+
+            {% if list %}
+                <p>
+                    <b>choose the label id</b>
+                </p>
+            <ul>
+                {%for item in list%}
+                <li>{{item}}</li>
+                {% endfor %}
+            </ul>
+            {% else %}
+                <p><b>leave label_id blank if you want to get all the labels id's of the page first</b></p>
+            {% endif %}
+
+        </form>
+    </body>
+</html>
